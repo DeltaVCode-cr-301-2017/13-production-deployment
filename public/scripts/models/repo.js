@@ -1,5 +1,6 @@
 'use strict';
 var app = app || {};
+app.githubToken = app.githubToken || 'not set';
 
 (function(module) {
   const repos = {};
@@ -14,7 +15,7 @@ var app = app || {};
     $.ajax({
       url: `https://api.github.com/user/repos`,
       type: 'GET',
-      headers: {'Authorization': `token ${githubToken}`}
+      headers: {'Authorization': `token ${app.githubToken}`}
     })
       .then(data => repos.all = data, err => console.error(err)) // es6 syntax arrow functions
       .then(callback);
