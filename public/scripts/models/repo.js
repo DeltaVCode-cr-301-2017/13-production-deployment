@@ -16,8 +16,8 @@ var app = app || {};
       type: 'GET',
       headers: {'Authorization': `token ${githubToken}`}
     })
-    .then(data => repos.all = data, err => console.error(err)) // es6 syntax arrow functions
-    .then(callback);
+      .then(data => repos.all = data, err => console.error(err)) // es6 syntax arrow functions
+      .then(callback);
   };
 
   repos.with = attr => repos.all.filter(repo => repo[attr]);
