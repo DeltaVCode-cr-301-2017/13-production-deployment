@@ -12,7 +12,7 @@ app.githubToken = app.githubToken || 'not set';
     //       Don't forget to remove the headers from our request - we're no longer using a token on the
     //       client side of our app, our new proxyGitHub function will be handling the token using our
     //       new environment variable!
-    $.get('https://api.github.com/ByteMiBro/repos', function (data) {
+    $.get('https://api.github.com/user/repos', function (data) {
       repos.all = data, err => console.error(err);
     }).then(callback);
   };
