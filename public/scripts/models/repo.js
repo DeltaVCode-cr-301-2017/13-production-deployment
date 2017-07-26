@@ -12,12 +12,12 @@ app.githubToken = app.githubToken || 'not set';
     //       Don't forget to remove the headers from our request - we're no longer using a token on the
     //       client side of our app, our new proxyGitHub function will be handling the token using our
     //       new environment variable!
-//app.get('/github/*', proxyGitHub);
+    //app.get('/github/*', proxyGitHub);
     $.get ('/github/user/repos')
-          .then(data => repos.all = data, err => console.error(err))
-          .then(callback);
+      .then(data => repos.all = data, err => console.error(err))
+      .then(callback);
   };
-    /*$.ajax({
+  /*$.ajax({
       url: `https://api.github.com/user/repos`,
       type: 'GET',
       headers: {'Authorization': `token ${app.githubToken}`}
